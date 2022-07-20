@@ -5,3 +5,9 @@ export const getAllData = async () => {
 
     return rows;
 }
+
+export const create = async (data) => { 
+    if (!data.name) throw new Error("Nama wajib diisi");
+
+    await CustomerModel.create(data);
+}

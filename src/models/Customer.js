@@ -8,3 +8,19 @@ export const getAllData = async () => {
 
     return results;
 }
+
+export const create = async (data) => {
+    const queryString = `
+        INSERT INTO Customers (name, addr, phone) 
+        VALUES (?, ?, ?)
+    `;
+
+    const values = [
+        data.name,
+        data.addr,
+        data.phone,
+    ];
+
+    const connection = await Db.getConnection();
+    await connection.execute(queryString, values);
+}

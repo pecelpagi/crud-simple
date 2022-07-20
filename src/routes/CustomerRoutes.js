@@ -2,7 +2,9 @@ import * as controller from '../controllers/CustomerController';
 import { addPrefix } from './util';
 
 const routes = (app) => {
-    app.route(addPrefix('/customers')).get(controller.getCustomers)
+    app.route(addPrefix('/customer'))
+    .get(controller.getCustomers)
+    .post(controller.create)
 }
  
 export default routes;

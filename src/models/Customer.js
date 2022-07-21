@@ -24,3 +24,16 @@ export const create = async (data) => {
     const connection = await Db.getConnection();
     await connection.execute(queryString, values);
 }
+
+export const deleteData = async (customerId) => {
+    const queryString =
+        `DELETE FROM Customers WHERE id = ?`
+        ;
+
+    const values = [
+        customerId,
+    ];
+
+    const connection = await Db.getConnection();
+    await connection.execute(queryString, values);
+}

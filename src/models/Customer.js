@@ -1,3 +1,4 @@
+import bodyParser from "body-parser";
 import * as Db from "../../db";
 
 export const getAllData = async () => {
@@ -32,6 +33,21 @@ export const deleteData = async (customerId) => {
 
     const values = [
         customerId,
+    ];
+
+    const connection = await Db.getConnection();
+    await connection.execute(queryString, values);
+}
+
+export const updateData = async (data) => {
+
+    const queryString = `UPDATE Customers SET name=?, addr=?, phone=? WHERE id=?`;
+
+    const values = [
+        data.name,
+        data.addr,
+        data.phone,
+        data.id,
     ];
 
     const connection = await Db.getConnection();

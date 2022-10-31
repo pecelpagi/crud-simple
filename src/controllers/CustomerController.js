@@ -25,3 +25,15 @@ export const create = async (req, res) => {
         res.status(500).json({ status: false, message: err.message });
     }
 }
+
+export const deleteData = async (req, res) => {
+    try {
+        await customerService.deleteData(req.body);
+        res.status(200).json({
+            status: true,
+            message: req.body
+        });
+    } catch (err) {
+        res.status(500).json({ status: false, message: err.message });
+    }
+}

@@ -5,6 +5,7 @@ const routes = (app) => {
     app.route(addPrefix('/customer'))
     .get(controller.getCustomers)
     .post(controller.create)
+    .delete(controller.deleteData)
 }
  
 export default routes;

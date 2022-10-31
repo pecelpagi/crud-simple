@@ -11,3 +11,7 @@ export const create = async (data) => {
 
     await CustomerModel.create(data);
 }
+
+export const deleteData = async (data) => {
+    await CustomerModel.deleteData(data.id);
+}

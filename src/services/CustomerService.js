@@ -8,10 +8,14 @@ export const getAllData = async () => {
 
 export const create = async (data) => { 
     if (!data.name) throw new Error("Nama wajib diisi");
-
     await CustomerModel.create(data);
 }
 
 export const deleteData = async (data) => {
     await CustomerModel.deleteData(data.id);
+}
+
+export const updateData = async (data) => {
+    await CustomerModel.updateData(data);
+
 }

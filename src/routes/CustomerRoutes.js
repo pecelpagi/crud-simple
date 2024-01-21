@@ -6,6 +6,7 @@ const routes = (app) => {
     .get(controller.getCustomers)
     .post(controller.create)
     .delete(controller.deleteData)
+    .put(controller.updateData)
 }
  
 export default routes;
